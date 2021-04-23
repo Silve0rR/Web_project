@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>{{ view_product }} {{ game }}</title>
+      <style>
+      body {
+      background: url(static/img/Одежда/фон3.jpg);
+      }
+      </style>
+  </head>
+  <body>
+<div style="display: inline-flex;">
+  <img src="static/img/main_site_logo.jpg" style="position:fixed; margin-top: -850px;" class="img-fluid" alt="Картинка не загрузилась.">
+    <a href="http://127.0.0.1:8080/basket"><img src="static/img/корзина1.jpg" style="position:fixed; margin-top: -842px; margin-left: 1800px" width="70" height="70" class="img-fluid" alt="Картинка не загрузилась."></a>
+    <a href="http://127.0.0.1:8080/main_page"><img src="static/img/logo.jpg" style="z-index: 1; position:fixed; margin-top: -830px; margin-left: 860px" width="200" height="50" class="img-fluid" alt="Картинка не загрузилась."></a>
+  <a class="btn btn-primary " style="position:fixed; z-index: 1; margin-top: -830px; margin-left: 100px" id = "btn_reg" href="/register">Зарегистрироваться</a>
+  <a class="btn btn-success" style="position:fixed; z-index: 1; margin-top: -830px; margin-left: 20px" id = "btn_log" href="/login">Войти</a>
+</div>
+    <div style="display: inline-flex;">
+        <img src="static/img/Одежда/{{ game }}/{{ view }}/{{ number }}.jpg" class="img-fluid" style="margin-top: 150px; margin-left: 200px;" width="500" height="700" alt="Картинка не загрузилась.">
+        <div>
+            <p style="font-size: 30pt; margin-left: 20px; margin-top: 150px;">{{ view_product }} с принтом</p>
+            <p style="font-size: 15pt; margin-top: -20px; margin-left: 20px;">{{ view_product }} со сплошным</p>
+            <p style="font-size: 15pt; margin-top: -20px; margin-left: 20px;">принтом {{ game }}</p>
+            <p style="font-size: 20pt; margin-top: 20px; margin-left: 20px;">{{ price }}руб.</p>
+
+            <div class="form-check">
+                <input class="form-check-input" style="margin-left: 0px;" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" style="margin-left: -125px;" for="flexRadioDefault1">
+                    {{ size[0] }}
+                </label>
+
+                <input class="form-check-input" style="margin-left: 30px;" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" style="margin-left: 25px;" for="flexRadioDefault2">
+                    {{ size[1] }}
+                </label>
+
+                <input class="form-check-input" style="margin-left: 25px;" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                <label class="form-check-label" style="margin-left: 25px;" for="flexRadioDefault3">
+                    {{ size[2] }}
+                </label>
+
+                <input class="form-check-input" style="margin-left: 25px;" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                <label class="form-check-label" style="margin-left: 25px;" for="flexRadioDefault4">
+                    {{ size[3] }}
+                </label>
+            </div>
+                <p><a href="http://127.0.0.1:8080//basket_{{ game }}_{{ price }}_{{ number }}"  style="margin-left: 20px; background-color:black; color:#fff; font-size: 15pt">Добавить в корзину</a></p>
+        </div>
+    </div>
+    <div style="margin-left: 200px;">
+        <div style="display: inline-flex;">
+            <h1 style="margin-top: 10px;">Описание</h1>
+        </div>
+        <div>
+            <p>{{ spisok_view[0] }}</p>
+            <p>{{ spisok_view[1] }}</p>
+            <p>{{ spisok_view[2] }}</p>
+            <p>{{ spisok_view[3] }}</p>
+        </div>
+        <div>
+            <h1 style="margin-top: 10px;">Состав</h1>
+        </div>
+        <div style="display: inline-flex;">
+            <p>{{ spisok_view[4] }}</p>
+        </div>
+        <div style="display: inline-flex;">
+            <p>{{ spisok_view[5] }}</p>
+        </div>
+        <div style="display: inline-flex;">
+            <p>{{ spisok_view[6] }}</p>
+        </div>
+        <div>
+            <h1 style="margin-top: 10px;">Уход</h1>
+        </div>
+        <div>
+            <p>{{ spisok_view[7] }}</p>
+            <p>{{ spisok_view[8] }}</p>
+            <p>{{ spisok_view[9] }}</p>
+            <p>{{ spisok_view[10] }}</p>
+        </div>
+    </div>
+</body>
+</html>
